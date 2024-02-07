@@ -32,9 +32,5 @@ namespace Bank.Class
             }
         }
 
-        public override void Crediter(Double montant)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

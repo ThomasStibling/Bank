@@ -25,9 +25,5 @@ namespace Bank.Class
             }
         }
 
-        public override void Crediter(Double montant)
-        {
-
-        }
     }
 }
