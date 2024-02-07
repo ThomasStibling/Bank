@@ -7,7 +7,10 @@ namespace Bank.Class
         protected string NumeroCompte { get; set; }
 
         public abstract void Debiter(double montant);
-        public abstract void Crediter(double montant);
+        public  void Crediter(double montant)
+        {
+            this.Solde += montant;
+        }
     }
 }
 
