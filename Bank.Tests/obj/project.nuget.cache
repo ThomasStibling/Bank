@@ -1,10 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "6O8n4x36EguxZOWxRFA1nYeZyHkb6/ST7E6zFMEK1/IkGLf/4gyA7huOb+wsfD9V8OyEd4mXRipH6zVxOEs+SA==",
+  "dgSpecHash": "hZ1CKggJZOWLQ4miRwvGo8PbQG9FHAbeDcIHwVXpDkxBvHjeQXuEXGqlfk4xNHrFU8h6m5ITWW8bo+Fx/wG7Fg==",
   "success": false,
   "projectFilePath": "C:\\Users\\ichennouf\\source\\repos\\Bank\\Bank.Tests\\Bank.Tests.csproj",
   "expectedPackageFiles": [],
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problème de lecture du fichier cache C:\\Users\\ichennouf\\source\\repos\\Bank\\Bank.Tests\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1102",
       "level": "Error",
@@ -37,6 +43,15 @@
       "level": "Error",
       "message": "Package coverlet.collector avec la version (>= 3.2.0) introuvable\r\n  - Version(s) 1 trouvée(s) dans Microsoft Visual Studio Offline Packages [version la plus proche : 3.0.3]\r\n  - Version(s) 0 trouvée(s) dans C:\\Program Files\\dotnet\\library-packs",
       "libraryId": "coverlet.collector",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Package xunit.extensibility.execution introuvable. Aucun package associé à cet ID n'existe dans la ou les sources suivantes : C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
+      "libraryId": "xunit.extensibility.execution",
       "targetGraphs": [
         "net7.0"
       ]

@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Bank.Class
 {
-    internal class CompteSansDecouvert:Compte
+    public class CompteSansDecouvert:Compte
     {
+        public CompteSansDecouvert(double s, string numCompte) : base(s, numCompte)
+        {
+
+        }
+
         public override void Debiter(Double montant)
         {
             if (montant < 0)

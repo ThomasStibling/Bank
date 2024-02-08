@@ -3,7 +3,7 @@ namespace Bank.Class
 {
     public abstract class Compte
     {
-        protected double Solde { get; set; }
+        public double Solde { get; set; }
         protected string NumeroCompte { get; set; }
 
         public string GetNumeroCompte()

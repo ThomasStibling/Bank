@@ -27,7 +27,8 @@
       "MSTest.TestAdapter >= 2.2.10",
       "MSTest.TestFramework >= 2.2.10",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
-      "coverlet.collector >= 3.2.0"
+      "coverlet.collector >= 3.2.0",
+      "xunit.extensibility.execution >= 2.6.6"
     ]
   },
   "packageFolders": {
@@ -93,6 +94,10 @@
           "coverlet.collector": {
             "target": "Package",
             "version": "[3.2.0, )"
+          },
+          "xunit.extensibility.execution": {
+            "target": "Package",
+            "version": "[2.6.6, )"
           }
         },
         "imports": [
@@ -116,6 +121,12 @@
     }
   },
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problème de lecture du fichier cache C:\\Users\\ichennouf\\source\\repos\\Bank\\Bank.Tests\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1102",
       "level": "Error",
@@ -148,6 +159,15 @@
       "level": "Error",
       "message": "Package coverlet.collector avec la version (>= 3.2.0) introuvable\r\n  - Version(s) 1 trouvée(s) dans Microsoft Visual Studio Offline Packages [version la plus proche : 3.0.3]\r\n  - Version(s) 0 trouvée(s) dans C:\\Program Files\\dotnet\\library-packs",
       "libraryId": "coverlet.collector",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Package xunit.extensibility.execution introuvable. Aucun package associé à cet ID n'existe dans la ou les sources suivantes : C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
+      "libraryId": "xunit.extensibility.execution",
       "targetGraphs": [
         "net7.0"
       ]
