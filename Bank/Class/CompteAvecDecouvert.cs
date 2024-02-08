@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank.Class
 {
-    internal class CompteAvecDecouvert:Compte
+    public class CompteAvecDecouvert:Compte
     {
         private double decouvertAutorise { get; set; }
 
@@ -15,20 +15,20 @@ namespace Bank.Class
             this.decouvertAutorise = decouvertAuto;
         }
 
-        public override void Debiter(Double montant)
+        public override void Debiter(double montant)
         {
-            if(montant < 0)
+            if (montant < 0)
             {
                 throw new ArgumentException("Le montant ne peut pas être inférieur à 0");
             }
-            else if (Solde - montant > decouvertAutorise)
+            else if (Solde - montant < decouvertAutorise)
             {
-                Console.WriteLine("Votre solde ne peut pas être inférieur à votre découvert autorisé");
+                Solde = Solde;
             }
             else
             {
-                Double resultat = Solde - montant;
-                Console.WriteLine("Votre solde est de " + resultat);
+                Solde -= montant;
+                Console.WriteLine("Votre solde est de " + Solde);
             }
         }
 
