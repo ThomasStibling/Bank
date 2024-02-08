@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1706.7
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", "{3A4FD299-B673-4751-B4A6-0529BBE024B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank", "Bank\Bank.csproj", "{3A4FD299-B673-4751-B4A6-0529BBE024B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Tests", "Bank.Tests\Bank.Tests.csproj", "{8161E48F-C8C1-4DAF-A5C5-4E358FFB3A70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank.Tests", "Bank.Tests\Bank.Tests.csproj", "{8161E48F-C8C1-4DAF-A5C5-4E358FFB3A70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
