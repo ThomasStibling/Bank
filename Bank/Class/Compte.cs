@@ -3,8 +3,14 @@ namespace Bank.Class
 {
     public abstract class Compte
     {
-        protected double Solde { get; set; }
+        public double Solde { get; set; }
         protected string NumeroCompte { get; set; }
+
+        public Compte(double s, string numCompte)
+        {
+            this.Solde = s;
+            this.NumeroCompte = numCompte;
+        }
 
         public abstract void Debiter(double montant);
 

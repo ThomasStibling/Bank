@@ -599,6 +599,51 @@
           }
         }
       },
+      "xunit.abstractions/2.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/xunit.abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/xunit.abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "xunit.extensibility.core/2.6.6": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "2.0.3"
+        },
+        "compile": {
+          "lib/netstandard1.1/xunit.core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.1/xunit.core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "xunit.extensibility.execution/2.6.6": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.6.6]"
+        },
+        "compile": {
+          "lib/netstandard1.1/xunit.execution.dotnet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.1/xunit.execution.dotnet.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Bank/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -2303,6 +2348,60 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "xunit.abstractions/2.0.3": {
+      "sha512": "pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg==",
+      "type": "package",
+      "path": "xunit.abstractions/2.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/xunit.abstractions.dll",
+        "lib/net35/xunit.abstractions.xml",
+        "lib/netstandard1.0/xunit.abstractions.dll",
+        "lib/netstandard1.0/xunit.abstractions.xml",
+        "lib/netstandard2.0/xunit.abstractions.dll",
+        "lib/netstandard2.0/xunit.abstractions.xml",
+        "xunit.abstractions.2.0.3.nupkg.sha512",
+        "xunit.abstractions.nuspec"
+      ]
+    },
+    "xunit.extensibility.core/2.6.6": {
+      "sha512": "ty6VKByzbx4Toj4/VGJLEnlmOawqZiMv0in/tLju+ftA+lbWuAWDERM+E52Jfhj4ZYHrAYVa14KHK5T+dq0XxA==",
+      "type": "package",
+      "path": "xunit.extensibility.core/2.6.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "_content/README.md",
+        "_content/logo-128-transparent.png",
+        "lib/net452/xunit.core.dll",
+        "lib/net452/xunit.core.dll.tdnet",
+        "lib/net452/xunit.core.xml",
+        "lib/net452/xunit.runner.tdnet.dll",
+        "lib/net452/xunit.runner.utility.net452.dll",
+        "lib/netstandard1.1/xunit.core.dll",
+        "lib/netstandard1.1/xunit.core.xml",
+        "xunit.extensibility.core.2.6.6.nupkg.sha512",
+        "xunit.extensibility.core.nuspec"
+      ]
+    },
+    "xunit.extensibility.execution/2.6.6": {
+      "sha512": "UDjIVGj2TepVKN3n32/qXIdb3U6STwTb9L6YEwoQO2A8OxiJS5QAVv2l1aT6tDwwv/9WBmm8Khh/LyHALipcng==",
+      "type": "package",
+      "path": "xunit.extensibility.execution/2.6.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "_content/README.md",
+        "_content/logo-128-transparent.png",
+        "lib/net452/xunit.execution.desktop.dll",
+        "lib/net452/xunit.execution.desktop.xml",
+        "lib/netstandard1.1/xunit.execution.dotnet.dll",
+        "lib/netstandard1.1/xunit.execution.dotnet.xml",
+        "xunit.extensibility.execution.2.6.6.nupkg.sha512",
+        "xunit.extensibility.execution.nuspec"
+      ]
+    },
     "Bank/1.0.0": {
       "type": "project",
       "path": "../Bank/Bank.csproj",
@@ -2315,36 +2414,39 @@
       "MSTest.TestAdapter >= 2.2.10",
       "MSTest.TestFramework >= 2.2.10",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
-      "coverlet.collector >= 3.2.0"
+      "coverlet.collector >= 3.2.0",
+      "xunit.extensibility.execution >= 2.6.6"
     ]
   },
   "packageFolders": {
-    "/Users/thomas/.nuget/packages/": {}
+    "C:\\Users\\stagiaire\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/thomas/Documents/m2i/architecture/Bank/Bank.Tests/Bank.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\stagiaire\\source\\repos\\Bank\\Bank.Tests\\Bank.Tests.csproj",
       "projectName": "Bank.Tests",
-      "projectPath": "/Users/thomas/Documents/m2i/architecture/Bank/Bank.Tests/Bank.Tests.csproj",
-      "packagesPath": "/Users/thomas/.nuget/packages/",
-      "outputPath": "/Users/thomas/Documents/m2i/architecture/Bank/Bank.Tests/obj/",
+      "projectPath": "C:\\Users\\stagiaire\\source\\repos\\Bank\\Bank.Tests\\Bank.Tests.csproj",
+      "packagesPath": "C:\\Users\\stagiaire\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\stagiaire\\source\\repos\\Bank\\Bank.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/thomas/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\stagiaire\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/thomas/Documents/m2i/architecture/Bank/Bank/Bank.csproj": {
-              "projectPath": "/Users/thomas/Documents/m2i/architecture/Bank/Bank/Bank.csproj"
+            "C:\\Users\\stagiaire\\source\\repos\\Bank\\Bank\\Bank.csproj": {
+              "projectPath": "C:\\Users\\stagiaire\\source\\repos\\Bank\\Bank\\Bank.csproj"
             }
           }
         }
@@ -2374,6 +2476,10 @@
           "coverlet.collector": {
             "target": "Package",
             "version": "[3.2.0, )"
+          },
+          "xunit.extensibility.execution": {
+            "target": "Package",
+            "version": "[2.6.6, )"
           }
         },
         "imports": [
@@ -2392,7 +2498,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

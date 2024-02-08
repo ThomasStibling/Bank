@@ -10,9 +10,9 @@ namespace Bank.Class
     {
         private double decouvertAutorise { get; set; }
 
-        public CompteAvecDecouvert(double decouvertAutorise)
+        public CompteAvecDecouvert(double s, string numCompte, double decouvertAuto) : base(s, numCompte)
         {
-            this.decouvertAutorise = decouvertAutorise;
+            this.decouvertAutorise = decouvertAuto;
         }
 
         public override void Debiter(Double montant)
