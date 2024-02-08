@@ -9,9 +9,9 @@ public class Banque
         Clients = new List<Client>();
     }
 
-    public void Retrait(string numCompte, string nomClient, double montant)
+    public void Retrait(string numCompte, string numClient, double montant)
     {
-        Client? client = Clients.FirstOrDefault(c => c.Nom == nomClient);
+        Client? client = Clients.FirstOrDefault(c => c.Nom == numClient);
         if (client is null)
         {
             throw new ArgumentException("Client introuvable.");

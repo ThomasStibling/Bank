@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank.Class
 {
-    internal class CompteAvecDecouvert:Compte
+    public class CompteAvecDecouvert:Compte
     {
         private double decouvertAutorise { get; set; }
 
