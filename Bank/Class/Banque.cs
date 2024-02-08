@@ -17,7 +17,7 @@ public class Banque
             throw new ArgumentException("Client introuvable.");
         }
 
-        Compte? compte = client.Comptes.FirstOrDefault(c => c.GetNumeroCompte() == numCompte);
+        Compte? compte = client.Comptes.FirstOrDefault(c => c.NumeroCompte == numCompte);
         if (compte is null)
         {
             throw new ArgumentException("Compte introuvable.");
@@ -39,7 +39,7 @@ public class Banque
             throw new ArgumentException("Client introuvable.");
         }
 
-        Compte? compte = client.Comptes.FirstOrDefault(c => c.GetNumeroCompte() == numCompte);
+        Compte? compte = client.Comptes.FirstOrDefault(c => c.NumeroCompte == numCompte);
         if (compte == null)
         {
             throw new ArgumentException("Compte introuvable.");

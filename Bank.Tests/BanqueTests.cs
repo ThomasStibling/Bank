@@ -1,34 +1,106 @@
-﻿using System.Numerics;
-using Bank.Class;
-using Xunit.Sdk;
+﻿using Bank.Class;
 
 namespace Bank.Tests;
 
 [TestClass]
 public class BanqueTests
 {
-    private Banque _banque;
- 
-    [TestInitialize]
-    public void Init()
-    {
-        _banque = new Banque();
-        Client _client1 = new Client("numCli1","1 rue aux arenes", "doe");
-        Client _client2 = new Client("numCli2", "34 rue aux graoully", "john");
-        Compte _compte1 = new CompteAvecDecouvert(1500.0D, "cpt1", 100.0D);
-        Compte _compte2 = new CompteSansDecouvert(1000.0D, "cpt2");
-        _banque.Clients.Add(_client1);
-        _banque.Clients.Add(_client2);
+    private Banque banque;
+    private Client client;
+    private CompteSansDecouvert compte;
 
+    [TestInitialize]
+    public void Setup()
+    {
+        // Initialisation de la banque et ajout d'un client et d'un compte pour les tests
+        banque = new Banque();
+        client = new Client("123", "123 Avenue des Champs-Élysées", "Jean Dupont");
+        compte = new CompteSansDecouvert(1500.0D, "FR7612345987650123456789014");
+        client.Comptes.Add(compte);
+        banque.Clients.Add(client);
     }
 
     [TestMethod]
-    public void Retrait_ClientEtCompteValide_MontantPositif()
+    public void Depot_Valide_ShouldIncreaseSolde()
     {
-        double montant = 10.8D;
-        _banque.Retrait("cpt1", "numCli1", montant);
-        //Assert.AreEqual(soldeInitial - montantADebiter, compte.Solde);
+        // Arrange
+        double montantInitial = compte.Solde;
+        double montantDepot = 100.0;
 
+        // Act
+        banque.Depot(compte.NumeroCompte, client.Nom, montantDepot);
+
+        // Assert
+        Assert.AreEqual(montantInitial + montantDepot, compte.Solde);
     }
 
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentException))]
+    public void Depot_MontantNegatif_ShouldThrowArgumentException()
+    {
+        // Act
+        banque.Depot(compte.NumeroCompte, client.Nom, -50.0);
+    }
+
+    [TestMethod]
+    public void Retrait_Valide_ShouldDecreaseSolde()
+    {
+        // Arrange
+        double montantInitial = compte.Solde;
+        double montantRetrait = 50.0;
+        compte.Crediter(100); // Assurez-vous qu'il y a assez d'argent pour le retrait
+
+        // Act
+        banque.Retrait(compte.NumeroCompte, client.Nom, montantRetrait);
+
+        // Assert
+        Assert.AreEqual(montantInitial + 100 - montantRetrait, compte.Solde);
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentException))]
+    public void Retrait_MontantNegatif_ShouldThrowArgumentException()
+    {
+        // Act
+        banque.Retrait(compte.NumeroCompte, client.Nom, -50.0);
+    }
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentException))]
+    public void Depot_MontantZero_ShouldThrowArgumentException()
+    {
+        // Act
+        banque.Depot(compte.NumeroCompte, client.Nom, 0);
+    }
+    
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentException))]
+    public void Retrait_ClientInexistant_ShouldThrowArgumentException()
+    {
+        // Act
+        banque.Retrait("FR7612345987650123456789014", "Client Inexistant", 100.0);
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentException))]
+    public void Depot_ClientInexistant_ShouldThrowArgumentException()
+    {
+        // Act
+        banque.Depot("FR7612345987650123456789014", "Client Inexistant", 100.0);
+    }
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentException))]
+    public void Retrait_CompteInexistant_ShouldThrowArgumentException()
+    {
+        // Act
+        banque.Retrait("Compte Inexistant", client.Nom, 100.0);
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentException))]
+    public void Depot_CompteInexistant_ShouldThrowArgumentException()
+    {
+        // Act
+        banque.Depot("Compte Inexistant", client.Nom, 100.0);
+    }
+    
 }

@@ -1,22 +1,12 @@
 ﻿public abstract class Compte
 {
     public double Solde { get; set; }
-    protected string NumeroCompte { get; set; }
+    public string NumeroCompte { get; set; }
 
     public Compte(double s, string numCompte)
     {
         this.Solde = s;
         this.NumeroCompte = numCompte;
-    }
-
-    public string GetNumeroCompte()
-    {
-        return NumeroCompte;
-    }
-
-    public double GetSolde()
-    {
-        return Solde;
     }
 
     public abstract void Debiter(double montant);
