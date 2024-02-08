@@ -19,13 +19,14 @@ namespace Bank.Class
             {
                 throw new ArgumentException("Le montant ne peut pas être inférieur à 0");
             }
-            else if (Solde - montant < 0)
+            else if ((Solde - montant) < 0)
             {
                 Console.WriteLine("Vous ne pouvez pas être à découvert");
             }
             else
             {
                 Double resultat = Solde - montant;
+                Solde = Solde - montant;
                 Console.WriteLine("Votre solde est de " + resultat);
             }
         }
