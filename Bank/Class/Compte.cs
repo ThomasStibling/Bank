@@ -1,31 +1,36 @@
-﻿using System;
-namespace Bank.Class
+﻿public abstract class Compte
 {
-    public abstract class Compte
+    public double Solde { get; set; }
+    protected string NumeroCompte { get; set; }
+
+    public Compte(double s, string numCompte)
     {
-        public double Solde { get; set; }
-        protected string NumeroCompte { get; set; }
+        this.Solde = s;
+        this.NumeroCompte = numCompte;
+    }
 
-        public Compte(double s, string numCompte)
+    public string GetNumeroCompte()
+    {
+        return NumeroCompte;
+    }
+
+    public double GetSolde()
+    {
+        return Solde;
+    }
+
+    public abstract void Debiter(double montant);
+
+    public void Crediter(double montant)
+    {
+        if (montant > 0)
         {
-            this.Solde = s;
-            this.NumeroCompte = numCompte;
+            this.Solde += montant;
+        }
+        else
+        {
+            this.Solde += 0;
         }
 
-        public abstract void Debiter(double montant);
-
-        public  void Crediter(double montant)
-        {
-            if (montant > 0)
-            {
-                this.Solde += montant;
-            }
-            else
-            {
-                this.Solde += 0;
-            }
-            
-        }
     }
 }
-
